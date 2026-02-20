@@ -10,7 +10,7 @@ echo "Changed to $(pwd)"
 ls -al
 chmod +x cobolcheck
 echo "Made linux_gnucobol_run_tests executable"
-cd..
+cd ..
 run_cobolcheck() {
   program=$1
     echo "Running cobolcheck for $program"
@@ -20,13 +20,13 @@ run_cobolcheck() {
       if cp CC##99.CBL "//'${ZOWE_USERNAME}.CBL($program)'"; then
         echo "Copied CC##99.CBL to ${ZOWE_USERNAME}.CBL($program)"
       else
-        echo "Failed copy to ${ZOWE_USERNAME}".CBL($program)"
+        echo "Failed copy to ${ZOWE_USERNAME}.CBL($program)"
       fi
     else
       echo "CC##99.CBL not found for $program"
     fi
     if [ -f "${program}.JCL" ]; then
-      if cp ${program}.JCL "//'${ZOWE_USERNAME.JCL($program)'"; then
+      if cp ${program}.JCL "//'${ZOWE_USERNAME}.JCL($program)'"; then
         echo "Copied ${program}.JCL to ${ZOWE_USERNAME}.JCL($program)"
       else
         echo "Failed"
