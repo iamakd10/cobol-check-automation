@@ -2,7 +2,7 @@ zowe config init --global-config
 zowe config set profiles.zosmf.properties.host $ZOWE_HOST 
 zowe config set profiles.zosmf.properties.port 10443
 zowe config set profiles.zosmf.properties.user $ZOWE_USERNAME 
-zowe config set rofiles.zosmf.properties.password $ZOWE_PASSWORD 
+zowe config set profiles.zosmf.properties.password $ZOWE_PASSWORD 
 zowe config set profiles.zosmf.properties.rejectUnauthorized false
 LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
 if ! zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" &>/dev/null; then
