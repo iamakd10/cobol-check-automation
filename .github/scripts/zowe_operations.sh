@@ -1,10 +1,9 @@
-zowe profiles create zosmf-profile myprofile \
-  --host $ZOWE_HOST \
-  --port 10443 \
-  --user $ZOWE_USERNAME \
-  --password $ZOWE_PASSWORD \
-  --reject-unauthorized false
-zowe profiles set-default zosmf-profile myprofile  
+zowe config init --global-config
+zowe config set profiles.zosmf.properties.host $ZOWE_HOST 
+zowe config set profiles.zosmf.properties.port 10443 
+zowe config set profiles.zosmf.properties.user $ZOWE_USERNAME 
+zowe config set rofiles.zosmf.properties.password $ZOWE_PASSWORD 
+zowe config set profiles.zosmf.properties.rejectUnauthorized false
 LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
 if ! zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" &>/dev/null; then
   echo "Directory does not exist. Creating it..."
