@@ -1,8 +1,8 @@
 //NUMBERSJ JOB 1,NOTIFY=&SYSUID
 //***************************************************
 //COBRUN  EXEC IGYWCL
-//COBOL.SYSIN  DD DSN=&SYSUID..CBL(CBL001),DISP=SHR
-//LKED.SYSMOD  DD DSN=&SYSUID..LOAD(CBL001),DISP=SHR
+//COBOL.SYSIN  DD DSN=&SYSUID..CBL(CBL0001),DISP=SHR
+//LKED.SYSMOD  DD DSN=&SYSUID..LOAD(CBL0001),DISP=SHR
 //***************************************************
 //IF RC = 0 THEN
 //***************************************************
